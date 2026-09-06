@@ -30,9 +30,9 @@ unless a capability gap vs Cloudflare is found later.
 | 3 | Purchase selected domain | ✅ **Completed 2026-09-06** — `hnkiot.com` registered (order 22943b47-10ef-4847-9c1f-552d06dc0c63), expires 2027-09-06, auto-renew ON |
 | 4 | Cloudflare zone / DNS / DNSSEC / SSL / security | ✅ **Core done 2026-09-06** — TLS 1.2 min, Always-HTTPS on, DNSSEC enabled (pending→active). SSL mode → strict in Phase 5. HSTS deferred to Phase 8. See `DNS-RECORDS.md` |
 | 5 | Website — Cloudflare Pages + React + domain + www redirect + HTTPS | ✅ **Done 2026-09-06** — React site live at https://hnkiot.com, valid TLS cert (Google Trust Services, auto-renew), http→https 301, www→apex 301 (path+query preserved), SSL Full(strict), security headers. DNSSEC still auto-activating. |
-| 6 | Email research (lowest-cost professional custom-domain email) | ✅ **Done 2026-09-06** — see `EMAIL-PLAN.md`. Recommend Zoho Mail (Free → Lite). **Waiting for user: pick Free (R0) vs Lite (~R200/yr)** |
-| 7 | Email setup — mailbox + aliases + MX/SPF/DKIM/DMARC | ⏸ Waiting for user to create Zoho account; then I add all DNS via token |
-| 8 | Verify — DNS / HTTPS / cert / redirects / mail auth / send+receive | ⛔ Not started |
+| 6 | Email research (lowest-cost professional custom-domain email) | ✅ **Done 2026-09-06** — see `EMAIL-PLAN.md`. **Decision: Zoho Mail Forever Free (R0)**, upgrade to Lite later only if IMAP/SMTP needed. |
+| 7 | Email setup — mailbox + aliases + MX/SPF/DKIM/DMARC | ✅ **Done 2026-09-06** — Zoho Free, `henock@hnkiot.com` + 5 aliases (`hello/support/projects/training/accounts`). MX + single-SPF + DKIM(verified) + DMARC(p=none) published. |
+| 8 | Verify — DNS / HTTPS / cert / redirects / mail auth / send+receive | 🔄 In progress — web+DNS+TLS+mail-records all ✅. **Pending:** DNSSEC still `pending` at registry; user running send/receive + SPF/DKIM/DMARC-pass + SMTP-availability tests |
 | 9 | Final cost report | ⛔ Not started |
 
 Legend: ✅ Completed · 🔄 In progress · ⏸ Waiting for user · ⛔ Not started

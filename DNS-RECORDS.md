@@ -15,25 +15,28 @@
 | TYPE | NAME | VALUE | PROXY | TTL | PURPOSE |
 |------|------|-------|-------|-----|---------|
 | CNAME | `hnkiot.com` | `hnkiot.pages.dev` | Proxied 🟠 | Auto | Apex → Cloudflare Pages project `hnkiot` |
-| CNAME | `www.hnkiot.com` | `hnkiot.pages.dev` | Proxied 🟠 | Auto | www → Pages; 301-redirected to apex by Redirect Rule "Redirect from WWW to root" (active) |
+| CNAME | `www.hnkiot.com` | `hnkiot.pages.dev` | Proxied 🟠 | Auto | www → Pages; 301 → apex via Redirect Rule "Redirect from WWW to root" |
+| TXT | `hnkiot.com` | `zoho-verification=zb31779327.zmverify.zoho.com` | 🔘 DNS-only | 300 | Zoho domain ownership (safe to delete after ~30 days) |
+| MX | `hnkiot.com` | `mx.zoho.com` | 🔘 | Auto | Zoho Mail inbound — priority **10** |
+| MX | `hnkiot.com` | `mx2.zoho.com` | 🔘 | Auto | Zoho Mail inbound — priority **20** |
+| MX | `hnkiot.com` | `mx3.zoho.com` | 🔘 | Auto | Zoho Mail inbound — priority **50** |
+| TXT | `hnkiot.com` | `v=spf1 include:zohomail.com ~all` | 🔘 | Auto | **SPF** — sole SPF record; only Zoho may send |
+| TXT | `zmail._domainkey.hnkiot.com` | `v=DKIM1; k=rsa; p=MIGfMA0GCS…IDAQAB` | 🔘 | Auto | **DKIM** selector `zmail` (Zoho) — verified Active |
+| TXT | `_dmarc.hnkiot.com` | `v=DMARC1; p=none; rua=mailto:henock@hnkiot.com; ruf=mailto:henock@hnkiot.com; fo=1; adkim=r; aspf=r` | 🔘 | Auto | **DMARC** — observe mode; escalate to quarantine→reject after Phase 8 |
 
-_Created 2026-09-06 via API. Email records (MX/SPF/DKIM/DMARC) added in Phase 7._
+_Web records + zone settings: 2026-09-06. Email records: 2026-09-06, all verified in Zoho._
+_Only one SPF record exists at the root. The `zoho-verification` TXT is not an SPF record and does not conflict._
 
-### Planned (not yet created)
+### Future changes (not yet made)
 
-| TYPE | NAME | VALUE | PROXY | TTL | PURPOSE | Phase |
-|------|------|-------|-------|-----|---------|-------|
-| CNAME | `hnkiot.com` (apex) | `hnkiot.pages.dev` | Proxied (auto by Pages) | Auto | Website — Cloudflare Pages custom domain | 5 |
-| CNAME | `www` | `hnkiot.pages.dev` | Proxied (auto by Pages) | Auto | www → 301 redirect to apex | 5 |
-| MX | `hnkiot.com` | Cloudflare Email Routing MX (×3) | n/a (grey) | Auto | Inbound mail → Email Routing | 7 |
-| TXT | `hnkiot.com` | `v=spf1 include:_spf.mx.cloudflare.net ~all` (+ outbound provider) | n/a | Auto | SPF — single merged record | 7 |
-| TXT | `cf2024-1._domainkey` | Cloudflare Email Routing DKIM | n/a | Auto | DKIM (inbound/forwarding) | 7 |
-| CNAME/TXT | outbound DKIM selector | outbound provider key | n/a | Auto | DKIM for sending as @hnkiot.com | 7 |
-| TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:...` | n/a | Auto | DMARC — start at p=none | 7 |
+| TYPE | NAME | CHANGE | WHEN |
+|------|------|--------|------|
+| TXT | `_dmarc.hnkiot.com` | `p=none` → `p=quarantine` | After 1–2 weeks of clean DMARC aggregate reports |
+| TXT | `_dmarc.hnkiot.com` | `p=quarantine` → `p=reject` | After quarantine runs clean |
+| TXT | `hnkiot.com` | delete `zoho-verification=…` | ~30 days after 2026-09-06 (ownership already confirmed) |
 
-> All records are managed inside Cloudflare (Pages custom domains create + proxy the apex/www
-> records automatically). No cross-provider DNS or orange-cloud caveats apply.
-> Email records stay **grey (DNS-only)** — proxying does not apply to MX/TXT.
+> All records are inside Cloudflare. Web records (apex/www) are proxied 🟠; mail records
+> (MX/TXT) are DNS-only 🔘 — proxying never applies to MX/TXT.
 
 ---
 
