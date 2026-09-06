@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HNK IoT Solutions">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#33c9ff"/>
+      <stop offset="1" stop-color="#5b8cff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0b1220"/>
+  <rect x="4" y="4" width="56" height="56" rx="12" fill="none" stroke="url(#g)" stroke-width="2" opacity="0.5"/>
+  <path d="M18 44V20M18 32h12M30 44V20" fill="none" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="44" cy="20" r="4" fill="#33c9ff"/>
+  <circle cx="44" cy="44" r="4" fill="#5b8cff"/>
+  <path d="M44 24v16" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+</svg>

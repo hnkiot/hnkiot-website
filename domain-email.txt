@@ -1,0 +1,879 @@
+You are acting as my senior Cloudflare, DNS, domain, email, DevOps and business-infrastructure engineer.
+
+I am using Claude inside VS Code and I have Cloudflare connected through MCP/plugins.
+
+# =========================================================
+# ARCHITECTURE OVERRIDE — 2026-09-06 (supersedes anything below)
+# =========================================================
+# HNK IoT Solutions uses Cloudflare as the primary infrastructure platform.
+# Netlify is REMOVED from this project. Do not create or configure a Netlify
+# project unless a specific capability is later found that Cloudflare cannot provide.
+#
+# Registrar:            Cloudflare Registrar  (hnkiot.com — REGISTERED 2026-09-06)
+# DNS / DNSSEC / SSL:   Cloudflare
+# Frontend hosting:     Cloudflare Pages (dedicated new project, React build)
+# Backend / API:        Cloudflare Workers (Free) when needed
+# Redirects / domains:  Cloudflare (www.hnkiot.com -> hnkiot.com)
+# Inbound email:        Cloudflare Email Routing (aliases -> primary mailbox)
+# Outbound email:       researched separately; must send as @hnkiot.com
+#
+# Wherever this document says "Netlify", read "Cloudflare Pages".
+# Budget rules, purchase-approval rules and phase order below still apply.
+# =========================================================
+
+Use the connected tools actively. Inspect and configure things yourself whenever technically possible instead of only giving me instructions.
+
+# BUSINESS
+
+Company name:
+
+HNK IoT Solutions
+
+The company is already registered as a private company in South Africa.
+
+I want HNK IoT Solutions to operate internationally, not only in South Africa.
+
+My current business communication still uses a personal Gmail address. One of the main purposes of this project is to replace that with professional company email using my own domain.
+
+# SERVICES
+
+HNK IoT Solutions can provide:
+
+* Embedded systems development
+* ESP32
+* STM32
+* Arduino
+* IoT systems
+* Sensors and telemetry
+* Device-to-cloud systems
+* Hardware/software integration
+* Electronics
+* Circuit troubleshooting
+* Hardware troubleshooting
+* PCB-related work
+* Prototype development
+* Proof-of-concept development
+* Automation
+* IoT dashboards
+* Software development
+* Web development
+* Python
+* C/C++
+* C#/.NET
+* React / JavaScript / TypeScript
+* Technical support
+* IT support
+* Computer hardware support
+* Networking
+* Remote technical support
+* AutoCAD support/training
+* Electrical engineering support
+* Electronic engineering support
+* Computer engineering support
+* Solar / PV / BESS technical support
+* Engineering tutoring
+* Programming tutoring
+* Technical training
+* STEM workshops
+* University technical tutoring
+* High-school Mathematics, Physics, Coding, Electronics and STEM support
+
+The brand must therefore look like an international engineering and technology company.
+
+# MAIN PROJECT
+
+I AM going to buy a domain name.
+
+This project is specifically to set up:
+
+1. A domain for the HNK IoT Solutions website.
+2. A professional international website.
+3. Professional company email using that domain.
+4. Cloudflare DNS/security.
+5. Cloudflare Pages hosting for the React frontend.
+6. SPF, DKIM and DMARC.
+7. A setup suitable for international clients.
+8. The lowest practical recurring cost.
+
+Do not treat domain purchase or business email as optional ideas.
+
+They are part of the project.
+
+# VERY IMPORTANT — BUDGET
+
+I am building this business on a limited budget.
+
+Cost control is a HARD REQUIREMENT.
+
+Do not recommend expensive tools simply because they are convenient.
+
+The preferred cost structure is:
+
+DOMAIN:
+Pay an annual registration fee only.
+
+WEBSITE HOSTING:
+R0/month initially if Netlify Free is sufficient.
+
+DNS/CDN:
+R0/month using Cloudflare Free where sufficient.
+
+SSL:
+R0.
+
+BUSINESS EMAIL:
+R0/month if a legitimate custom-domain solution can meet the requirements.
+
+If free professional outbound email is not realistically available, find the lowest-cost reliable option.
+
+OTHER SOFTWARE:
+R0 unless genuinely necessary.
+
+Do not purchase or subscribe to anything without explicit approval.
+
+As a practical target, try to keep the initial website/domain/email infrastructure at approximately:
+
+* Domain: preferably under R250/year
+* Website hosting: R0
+* Cloudflare: R0
+* SSL: R0
+* Email: preferably R0 initially
+
+Try to keep the entire first-year infrastructure cost around R250-R350 if technically possible.
+
+This is a TARGET, not permission to spend automatically.
+
+If the best viable configuration costs more, STOP before purchase and explain:
+
+* why
+* exact first-year cost
+* renewal cost
+* cheaper alternatives
+* what functionality I would lose with the cheaper alternative
+
+Never hide renewal prices.
+
+Never recommend a cheap first-year promotional domain without showing the renewal price.
+
+# DOMAIN
+
+I want the business to serve international clients.
+
+Therefore `.com` should normally be preferred.
+
+Check the LIVE availability and pricing of:
+
+1. hnkiot.com
+2. hnkiotsolutions.com
+3. hnk-iot.com
+4. hnkiot.tech
+5. hnkiot.io
+6. hnkiotsolutions.co.za
+
+You may suggest up to 5 additional alternatives if the best choices are unavailable.
+
+Priorities:
+
+1. Professional
+2. International
+3. Short
+4. Easy to spell
+5. Easy to remember
+6. Appropriate for engineering / IoT / software
+7. Low renewal cost
+
+For every viable domain show:
+
+* domain
+* available/unavailable
+* registrar
+* registration price
+* renewal price
+* taxes/fees if known
+* total approximate cost in South African Rand
+* advantages
+* disadvantages
+
+Do NOT buy the domain automatically.
+
+When you have identified the strongest option, present something like:
+
+Recommended domain:
+hnkiot.com
+
+Registration:
+R___
+
+Renewal:
+R___ / year
+
+Then explicitly ask for my approval before purchasing.
+
+# DOMAIN REGISTRAR
+
+Because Cloudflare is already connected, investigate Cloudflare Registrar first for supported TLDs such as `.com`.
+
+If another registrar is materially cheaper for a particular extension, compare it.
+
+Important:
+
+Do not choose a registrar only because of the first-year promotional price.
+
+Consider renewal pricing.
+
+# CLOUDFLARE
+
+Use my Cloudflare MCP/plugin connection to inspect my real account.
+
+Check:
+
+* existing domains
+* existing zones
+* registrar access
+* DNS
+* nameservers
+* DNSSEC
+* SSL/TLS
+* Email Routing
+* Pages
+* Workers
+* existing configurations that could be reused
+
+Once I purchase the selected domain, use Cloudflare for the parts it handles well.
+
+Preferred:
+
+* Cloudflare authoritative DNS
+* DNSSEC
+* SSL/TLS
+* HTTPS
+* DNS security
+* email-related DNS
+* sensible free security features
+
+Do not activate paid Cloudflare products without approval.
+
+# WEBSITE HOSTING
+
+All-Cloudflare architecture (2026-09-06):
+
+DOMAIN / REGISTRAR
+Cloudflare Registrar  (hnkiot.com registered)
+
+DNS
+Cloudflare
+
+WEBSITE
+Cloudflare Pages (Free) — dedicated project, React build
+
+BACKEND / API
+Cloudflare Workers (Free) when needed
+
+SSL
+Free (Cloudflare universal SSL)
+
+EMAIL
+Cloudflare Email Routing for inbound aliases + lowest-cost professional
+custom-domain solution for outbound sending as @hnkiot.com
+
+Cloudflare Pages Free is sufficient. Do not move to any paid hosting/plan
+without explicit approval.
+
+# WEBSITE
+
+The selected domain will be the official HNK IoT Solutions website.
+
+The primary domain should preferably be:
+
+https://hnkiot.com
+
+or the best selected alternative.
+
+Configure:
+
+* apex domain
+* www
+* HTTPS
+* SSL
+* canonical domain
+* redirects
+* DNS
+* Netlify custom domain
+* deployment
+
+Choose either:
+
+domain.com
+
+or:
+
+[www.domain.com](http://www.domain.com)
+
+as canonical.
+
+Prefer the shorter apex domain unless there is a technical reason not to.
+
+Redirect the other version.
+
+The website should ultimately support:
+
+* Home
+* Services
+* Projects / Portfolio
+* About
+* Engineering & IoT
+* Software
+* Technical Support
+* Training / Tutoring
+* Contact
+
+Possible brand positioning:
+
+HNK IoT Solutions
+
+Engineering • Software • Embedded Systems • IoT
+
+Possible supporting statement:
+
+Embedded Systems | IoT | Software Development | Technical Support | Engineering Training
+
+The site must communicate that HNK IoT Solutions serves:
+
+* South Africa
+* international clients
+* remote clients
+
+Cape Town may appear as the company location, but do NOT make the brand look restricted to Cape Town.
+
+# BUSINESS EMAIL — REQUIRED
+
+After the domain is purchased, professional email is the NEXT major requirement.
+
+I do not want to continue using a personal Gmail address for professional client acquisition.
+
+The domain must support business addresses such as:
+
+[henock@domain.com](mailto:henock@domain.com)
+[hello@domain.com](mailto:hello@domain.com)
+[support@domain.com](mailto:support@domain.com)
+[projects@domain.com](mailto:projects@domain.com)
+[training@domain.com](mailto:training@domain.com)
+
+However:
+
+Do NOT create five separately paid mailboxes unless necessary.
+
+Prefer:
+
+ONE main mailbox
+
+plus free aliases or forwarding addresses.
+
+Recommended primary mailbox:
+
+[henock@domain.com](mailto:henock@domain.com)
+
+Recommended public address:
+
+[hello@domain.com](mailto:hello@domain.com)
+
+Possible aliases:
+
+support@
+projects@
+training@
+sales@
+accounts@
+
+They may all route to the primary mailbox initially.
+
+# EMAIL REQUIREMENTS
+
+The email solution must support BOTH:
+
+RECEIVING
+
+and
+
+SENDING
+
+professional email.
+
+Do not tell me Cloudflare Email Routing alone solves the entire problem.
+
+Cloudflare Email Routing may solve incoming forwarding, but I also need to SEND email as:
+
+[henock@mydomain.com](mailto:henock@mydomain.com)
+
+and/or:
+
+[hello@mydomain.com](mailto:hello@mydomain.com)
+
+Recipients must see the company-domain email as the sender.
+
+# EMAIL OPTIONS
+
+Research the CURRENT pricing and availability of:
+
+* Zoho Mail
+* Cloudflare Email Routing
+* other legitimate low-cost custom-domain mailbox solutions
+* combinations of forwarding + SMTP if technically appropriate
+
+If Zoho offers a genuinely free custom-domain plan to me in South Africa, evaluate it.
+
+Do not assume an old free plan still exists.
+
+Verify current eligibility.
+
+For each email solution show:
+
+* monthly cost
+* annual cost
+* number of mailboxes
+* aliases
+* receiving support
+* sending support
+* SMTP support
+* IMAP support
+* mobile/web access
+* storage
+* SPF
+* DKIM
+* DMARC support
+* limitations
+
+Prioritize:
+
+1. R0
+2. very low cost
+3. reliable delivery
+4. professional appearance
+5. correct authentication
+
+# EMAIL AUTHENTICATION
+
+Set up:
+
+MX
+
+SPF
+
+DKIM
+
+DMARC
+
+Do this correctly.
+
+There must be only one valid SPF policy for the root domain.
+
+Do not create conflicting SPF records.
+
+Use the email provider's actual DKIM selector/key.
+
+Start DMARC conservatively.
+
+For example:
+
+v=DMARC1; p=none;
+
+Add reporting if appropriate.
+
+Later we may move to:
+
+p=quarantine
+
+then:
+
+p=reject
+
+after the system is verified.
+
+Check alignment.
+
+# EMAIL DELIVERABILITY
+
+The email domain will be used for legitimate client outreach.
+
+Protect its reputation.
+
+Do not configure mass-mail spam infrastructure.
+
+My outreach should be:
+
+* personalized
+* relevant
+* low volume initially
+* professional
+* targeted to potential clients/partners
+
+We will gradually increase sending volume.
+
+Ensure:
+
+* SPF passes
+* DKIM passes
+* DMARC passes/alignment is reasonable
+* PTR is not relevant unless we operate our own SMTP server
+* no open relay
+* no spoofed sender
+* no misconfigured catch-all unless intentionally required
+
+# EMAIL ALIASES
+
+If technically possible without extra cost:
+
+[henock@domain.com](mailto:henock@domain.com)
+= primary mailbox
+
+[hello@domain.com](mailto:hello@domain.com)
+→ henock inbox
+
+[support@domain.com](mailto:support@domain.com)
+→ henock inbox
+
+[projects@domain.com](mailto:projects@domain.com)
+→ henock inbox
+
+[training@domain.com](mailto:training@domain.com)
+→ henock inbox
+
+[accounts@domain.com](mailto:accounts@domain.com)
+→ henock inbox
+
+This gives the company multiple professional departments without paying for many inboxes.
+
+# CLOUDFLARE EMAIL ROUTING
+
+Cloudflare Email Routing may be useful if free.
+
+If used, configure appropriate aliases.
+
+But confirm how outbound sending will work.
+
+Do not complete the email phase until we have a legitimate method to SEND from the domain as well.
+
+# CLOUDFLARE PAGES  (replaces the former NETLIFY section)
+
+Create a dedicated new Cloudflare Pages project for HNK IoT Solutions.
+Do NOT reuse any unrelated existing Pages project.
+
+Set up deployment via wrangler CLI / Cloudflare API.
+
+Do not create unnecessary infrastructure.
+
+Ensure:
+
+* React build works
+* production deploy works (wrangler pages deploy)
+* custom domain hnkiot.com works
+* www.hnkiot.com redirects to hnkiot.com
+* HTTPS works
+* SPA / redirects behave correctly
+* no stale or duplicate DNS records
+
+Pages custom domains are managed by Cloudflare end-to-end, so the apex and www
+records are created and proxied by Cloudflare automatically — no cross-provider
+DNS or proxy caveats apply.
+
+# DNS RECORD DOCUMENTATION
+
+Maintain a DNS table.
+
+For every record include:
+
+TYPE
+NAME
+VALUE
+PROXY
+TTL
+PURPOSE
+
+Document:
+
+A
+AAAA
+CNAME
+MX
+TXT
+SPF
+DKIM
+DMARC
+verification records
+
+Avoid stale records.
+
+Avoid duplicate records.
+
+# SECURITY
+
+Configure appropriate free security.
+
+Review:
+
+* registrar lock
+* WHOIS privacy
+* MFA recommendation
+* DNSSEC
+* Always Use HTTPS
+* minimum TLS version
+* SSL mode
+* HTTPS redirect
+* HSTS
+
+Only enable HSTS once HTTPS is completely stable.
+
+Do not enable settings that could lock us out or break development without warning.
+
+# INTERNATIONAL BUSINESS POSITIONING
+
+Remember throughout the configuration:
+
+HNK IoT Solutions is NOT intended to be only a local Cape Town business.
+
+It is a South African registered company serving international clients.
+
+The website, domain and email should support work from:
+
+* South African clients
+* African clients
+* European clients
+* UK clients
+* US/international clients
+* remote engineering clients
+* remote software clients
+* remote tutoring/training clients
+
+Use `.com` as primary if financially sensible.
+
+# DO MOST OF THE WORK
+
+This is an implementation task.
+
+Do not simply tell me:
+
+“Go to Cloudflare and click X.”
+
+If your Cloudflare MCP/plugin can do it, DO IT.
+
+If VS Code can do it, DO IT.
+
+If the terminal can do it, DO IT.
+
+If a config file can be edited, EDIT IT.
+
+If DNS can be changed through the connected account, configure it.
+
+If a deployment can be triggered with available tools, trigger it.
+
+Only give me manual instructions when:
+
+* payment is required
+* identity verification is required
+* MFA requires me
+* CAPTCHA requires me
+* a connector genuinely cannot perform the operation
+
+When manual action is needed, keep instructions extremely short.
+
+Example:
+
+“Cloudflare requires you to confirm the purchase manually.
+
+Open:
+Registrar → hnkiot.com → Register
+
+Price: R___
+
+Do not add any extras.
+
+Tell me when completed.”
+
+Then continue.
+
+# PURCHASE SAFETY
+
+You MUST ask me before:
+
+* buying a domain
+* buying email
+* starting a paid subscription
+* upgrading Netlify
+* upgrading Cloudflare
+* buying SSL
+* buying hosting
+* buying any add-on
+
+Do NOT treat my instruction to build the infrastructure as permission to spend money automatically.
+
+# EXISTING BUDGET PRINCIPLE
+
+My money should be used carefully.
+
+I am trying to grow HNK IoT Solutions and find paying clients.
+
+Therefore:
+
+Do not spend R500-R1,000/year on something that a secure R100-R300/year setup can do adequately.
+
+Do not spend money on cosmetic infrastructure before revenue.
+
+Do not add subscriptions merely because they are convenient.
+
+Free infrastructure is preferred where professional enough.
+
+# WORKFLOW
+
+Follow this sequence.
+
+## PHASE 1 — INVENTORY
+
+Inspect:
+
+Cloudflare
+VS Code workspace
+Git repository
+Netlify if accessible
+
+Identify current assets.
+
+## PHASE 2 — DOMAIN RESEARCH
+
+Check domain availability and prices.
+
+Compare registration AND renewal.
+
+Recommend the strongest option.
+
+STOP for purchase approval.
+
+## PHASE 3 — PURCHASE
+
+After I approve:
+
+complete what you can.
+
+If checkout requires me, guide me only through that part.
+
+## PHASE 4 — CLOUDFLARE
+
+Configure:
+
+zone
+DNS
+DNSSEC
+SSL/TLS
+security
+
+## PHASE 5 — WEBSITE
+
+Set up/connect:
+
+Cloudflare Pages (dedicated new project)
+React build + production deploy
+domain (hnkiot.com)
+www (redirect www.hnkiot.com -> hnkiot.com)
+HTTPS
+redirects
+deployment
+
+## PHASE 6 — EMAIL RESEARCH
+
+Find the lowest-cost viable professional email solution.
+
+Do not purchase without permission.
+
+## PHASE 7 — EMAIL SETUP
+
+Create/configure:
+
+main mailbox
+aliases
+MX
+SPF
+DKIM
+DMARC
+
+## PHASE 8 — VERIFY
+
+Use available tools such as:
+
+dig
+nslookup
+curl
+openssl
+DNS lookup utilities
+
+Test:
+
+domain resolution
+website
+HTTPS
+certificate
+redirect
+MX
+SPF
+DKIM
+DMARC
+
+Also test sending and receiving email.
+
+## PHASE 9 — FINAL COST REPORT
+
+Show exactly:
+
+DOMAIN
+Provider:
+Registration:
+Renewal:
+
+WEBSITE
+Provider:
+Monthly:
+Annual:
+
+DNS
+Provider:
+Monthly:
+Annual:
+
+SSL
+Cost:
+
+EMAIL
+Provider:
+Mailboxes:
+Aliases:
+Monthly:
+Annual:
+
+TOTAL FIRST YEAR:
+R___
+
+EXPECTED YEAR 2:
+R___
+
+Do not omit renewal costs.
+
+# FINAL EXPECTED RESULT
+
+The project is complete only when I have:
+
+1. A domain I own.
+2. A working HNK IoT Solutions website.
+3. HTTPS.
+4. Cloudflare DNS.
+5. Professional company email.
+6. Ability to receive company email.
+7. Ability to send company email.
+8. SPF.
+9. DKIM.
+10. DMARC.
+11. A professional company signature.
+12. A clear record of all recurring costs.
+
+The ultimate goal is:
+
+HNK IoT Solutions
+
+A professional international engineering, software, embedded systems and IoT company with a credible website and business email, established at the lowest practical recurring cost.
