@@ -10,11 +10,14 @@
 
 ---
 
-## DNS records
+## DNS records (live)
 
 | TYPE | NAME | VALUE | PROXY | TTL | PURPOSE |
 |------|------|-------|-------|-----|---------|
-| _(none yet)_ | | | | | Web + email records added in Phase 5 / Phase 7 |
+| CNAME | `hnkiot.com` | `hnkiot.pages.dev` | Proxied 🟠 | Auto | Apex → Cloudflare Pages project `hnkiot` |
+| CNAME | `www.hnkiot.com` | `hnkiot.pages.dev` | Proxied 🟠 | Auto | www → Pages; 301-redirected to apex by Redirect Rule "Redirect from WWW to root" (active) |
+
+_Created 2026-09-06 via API. Email records (MX/SPF/DKIM/DMARC) added in Phase 7._
 
 ### Planned (not yet created)
 
@@ -38,7 +41,7 @@
 
 | Setting | Value | Notes |
 |---------|-------|-------|
-| SSL/TLS mode | **Full** | Move to **Full (strict)** in Phase 5 once Netlify origin cert is confirmed |
+| SSL/TLS mode | **Full (strict)** | Set 2026-09-06 — origin is Cloudflare Pages (always-valid cert) |
 | Always Use HTTPS | **On** | HTTP → HTTPS redirect at edge |
 | Automatic HTTPS Rewrites | **On** | |
 | Minimum TLS version | **1.2** | Raised from default 1.0 |
