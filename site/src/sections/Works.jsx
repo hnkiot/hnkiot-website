@@ -5,6 +5,14 @@ import { services } from '../data/services'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const shots = [
+  { img: '/images/gallery-01.webp', caption: 'Reviewing live device data on a fleet dashboard' },
+  { img: '/images/gallery-02.webp', caption: 'IoT gateway hardware, ready for deployment' },
+  { img: '/images/gallery-03.webp', caption: 'Walking through an IoT system architecture' },
+  { img: '/images/gallery-04.webp', caption: 'Scoping a project before the first line of code' },
+  { img: '/images/gallery-05.webp', caption: 'Briefing a client on a connected systems rollout' },
+]
+
 export default function Works({ scrollRef: _scrollRef, onSelectService }) {
   const sectionRef = useRef(null)
   const gridRef = useRef(null)
@@ -32,6 +40,14 @@ export default function Works({ scrollRef: _scrollRef, onSelectService }) {
         stagger: 0.1,
         ease: 'power3.out',
         scrollTrigger: { trigger: section, start: 'top 70%', once: true },
+      })
+      gsap.from('.work-shot', {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.work-shots', start: 'top 80%', once: true },
       })
     }, section)
     return () => ctx.revert()
@@ -175,6 +191,53 @@ export default function Works({ scrollRef: _scrollRef, onSelectService }) {
               onClick={() => onSelectService(service.id)}
             />
           ))}
+        </div>
+
+        <div
+          style={{
+            marginTop: 'clamp(48px, 7vw, 90px)',
+            paddingTop: 'clamp(28px, 4vw, 40px)',
+            borderTop: '1px solid #0b1220',
+          }}
+        >
+          <p
+            style={{
+              fontSize: '12px',
+              letterSpacing: '0.16em',
+              color: '#666666',
+              textTransform: 'uppercase',
+              marginBottom: 'clamp(20px, 3vw, 32px)',
+            }}
+          >
+            Real work, not stock photos
+          </p>
+          <div
+            className="work-shots"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
+              gap: 'clamp(10px, 1.6vw, 18px)',
+            }}
+          >
+            {shots.map((shot) => (
+              <figure
+                key={shot.img}
+                className="work-shot"
+                style={{ margin: 0, border: '1px solid #0b1220', backgroundColor: '#ffffff' }}
+              >
+                <img
+                  src={shot.img}
+                  alt={shot.caption}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: '100%', display: 'block', aspectRatio: '4 / 3', objectFit: 'cover' }}
+                />
+                <figcaption style={{ padding: '12px 14px', fontSize: '12.5px', lineHeight: 1.5, color: '#333333', borderTop: '1px solid #e5e5e5' }}>
+                  {shot.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -47,7 +47,7 @@ export default function About() {
           <div style={{ border: '1px solid #0b1220', backgroundColor: '#ffffff', padding: '10px' }}>
             <img
               src="/images/founder.webp"
-              alt="Henock Mukonkole, Founder and Lead Engineer at HNK IoT Solutions"
+              alt="Henock Hnk, Founder and Lead Engineer at HNK IoT Solutions"
               loading="lazy"
               decoding="async"
               style={{ width: '100%', display: 'block', aspectRatio: '4 / 5', objectFit: 'cover' }}
@@ -69,13 +69,15 @@ export default function About() {
               marginBottom: '22px',
             }}
           >
-            Henock Mukonkole, Founder and Lead Engineer
+            Henock Hnk, Founder and Lead Engineer
           </h2>
           <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#333333', maxWidth: '560px', marginBottom: '16px' }}>
-            HNK IoT Solutions is engineer led, not a reseller. The same
-            person and team who design the circuit and write the firmware
-            also build the cloud backend, so a support call never dead ends
-            at someone who has never seen the schematic.
+            HNK IoT Solutions (Pty) Ltd is a registered South African
+            company, tax compliant with SARS. It is engineer led, not a
+            reseller: the same person and team who design the circuit and
+            write the firmware also build the cloud backend, so a support
+            call never dead ends at someone who has never seen the
+            schematic.
           </p>
           <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#333333', maxWidth: '560px', marginBottom: '28px' }}>
             Based in Cape Town, working in English and French, with clients
