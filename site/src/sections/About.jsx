@@ -72,12 +72,12 @@ export default function About() {
             Henock Hnk, Founder and Lead Engineer
           </h2>
           <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#333333', maxWidth: '560px', marginBottom: '16px' }}>
-            HNK IoT Solutions (Pty) Ltd is a registered South African
-            company, tax compliant with SARS. It is engineer led, not a
-            reseller: the same person and team who design the circuit and
-            write the firmware also build the cloud backend, so a support
-            call never dead ends at someone who has never seen the
-            schematic.
+            HNK IoT Solutions (Pty) Ltd is registered with the CIPC
+            (Companies and Intellectual Property Commission). It is
+            engineer led, not a reseller: the same person and team who
+            design the circuit and write the firmware also build the cloud
+            backend, so a support call never dead ends at someone who has
+            never seen the schematic.
           </p>
           <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#333333', maxWidth: '560px', marginBottom: '28px' }}>
             Based in Cape Town, working in English and French, with clients
