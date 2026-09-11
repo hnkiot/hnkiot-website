@@ -7,6 +7,8 @@ import Footer from './sections/Footer'
 
 const Works = lazy(() => import('./sections/Works'))
 const Capabilities = lazy(() => import('./sections/Capabilities'))
+const About = lazy(() => import('./sections/About'))
+const Gallery = lazy(() => import('./sections/Gallery'))
 const Highlight = lazy(() => import('./sections/Highlight'))
 const Contact = lazy(() => import('./sections/Contact')) // three.js shader, heaviest chunk
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
@@ -81,6 +83,12 @@ export default function App() {
           </Suspense>
           <Suspense fallback={<DarkFallback />}>
             <Capabilities />
+          </Suspense>
+          <Suspense fallback={<LightFallback />}>
+            <About />
+          </Suspense>
+          <Suspense fallback={<LightFallback />}>
+            <Gallery />
           </Suspense>
           <Suspense fallback={<LightFallback />}>
             <Highlight />
