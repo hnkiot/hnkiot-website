@@ -4,6 +4,8 @@ site/node_modules/
 
 # build output
 site/dist/
+site/marketing/promo-out/
+site/test-results/
 
 # cloudflare / wrangler
 .wrangler/

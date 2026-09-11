@@ -1,0 +1,75 @@
+NOTEBOOKLM VIDEO OVERVIEW PROMPT
+HNK IoT Solutions
+
+HOW TO USE
+1. Open notebooklm.google.com and create a new notebook.
+2. Add your sources: upload the photos you have (real project and hardware
+   photos, no stock images), and add this website as a source:
+   https://hnkiot.com
+3. Go to Studio > Video Overview (or Audio Overview if video isn't
+   available in your account yet).
+4. When it asks for a focus, topic, or custom instructions, paste
+   everything below the line into that box.
+
+------------------------------------------------------------
+
+Create a short, professional marketing video for HNK IoT Solutions, a
+South African engineering and technology company based in Cape Town.
+The tone should be confident, clear and grounded, not hype-driven or
+overly salesy. Avoid generic stock-footage language and avoid inventing
+any statistics, client names, testimonials or awards that are not in the
+provided sources.
+
+Company summary:
+HNK IoT Solutions (Pty) Ltd is registered with the CIPC (Companies and
+Intellectual Property Commission) in South Africa. It is engineer led,
+not a reseller: the same person and team who design the circuit and
+write the firmware also build the cloud software on top of it, so
+support never dead ends at someone who has never seen the schematic.
+Based in Cape Town, working in English and French, with clients across
+South Africa and internationally.
+
+What the video should cover, in this rough order:
+1. A short, punchy opening that introduces HNK IoT Solutions and the
+   idea "from the circuit board to the cloud."
+2. A quick walkthrough of the core services:
+   - Embedded systems and firmware (ESP32, STM32, Arduino)
+   - IoT and telemetry (MQTT, LoRaWAN, cellular connectivity)
+   - Software and dashboards (web apps, APIs, cloud-connected dashboards)
+   - Electronics and prototyping (proof of concept to working board)
+   - Technical support and networking
+   - Energy monitoring (solar, battery storage, smart metering)
+   - Engineering training and mentoring
+3. A brief note that the company is engineer led and registered in South
+   Africa, to build trust, without over-explaining the legal details.
+4. Use the uploaded photos as the visual backbone wherever the tool
+   allows custom imagery, these are real project and hardware photos,
+   not illustrations.
+5. A closing call to action that clearly displays, and if narrated,
+   clearly says:
+   - Website: hnkiot.com
+   - WhatsApp: +27 61 471 9400 (wa.me/27614719400)
+
+Keep the whole video short, ideally 30 to 60 seconds, suitable for
+posting on Instagram, Facebook, LinkedIn, YouTube and TikTok. Prioritise
+clarity over length. Do not use the em dash character anywhere in any
+on-screen text or narration script, use a comma or a full stop instead.
+
+Company links (for reference and for any on-screen or spoken mentions):
+Website: https://hnkiot.com
+WhatsApp: https://wa.me/27614719400
+GitHub: https://github.com/hnkiot
+LinkedIn: https://www.linkedin.com/in/hnk-iot-solutions/
+Instagram: https://www.instagram.com/hnkiotsolutions/
+X (Twitter): https://x.com/HnkIotSolutions
+Facebook: https://www.facebook.com/HnkIoTSolutions
+YouTube: https://www.youtube.com/@HNKIoTSolutions
+Contact email: hello@hnkiot.com
+
+------------------------------------------------------------
+
+NOTE: Do not upload or reference any photos that show a visitor at a
+reception desk or any scene implying a public walk-in office. HNK IoT
+Solutions does not have a public storefront, and the residential
+location should never appear on screen, in narration, or in any
+generated captions.

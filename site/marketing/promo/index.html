@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>HNK IoT Solutions Promo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1080px;
+    height: 1920px;
+    background: #070b14;
+    overflow: hidden;
+    font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #ffffff;
+  }
+  #stage {
+    position: relative;
+    width: 1080px;
+    height: 1920px;
+    background: #070b14;
+  }
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    padding: 0 90px;
+  }
+  .eyebrow {
+    font-size: 26px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #33c9ff;
+    margin-bottom: 28px;
+    opacity: 0;
+    text-align: center;
+  }
+  .headline {
+    font-size: 96px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    text-align: center;
+    opacity: 0;
+  }
+  .sub {
+    font-size: 40px;
+    font-weight: 400;
+    color: #c7ccd6;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0;
+    max-width: 820px;
+  }
+  .wordmark {
+    font-size: 150px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    opacity: 0;
+  }
+  .rule {
+    width: 0;
+    height: 4px;
+    background: #33c9ff;
+    margin-top: 34px;
+  }
+  /* Scene C photo */
+  .photo-wrap {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  .photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1);
+  }
+  .photo-shade {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 560px;
+    background: linear-gradient(to top, rgba(7,11,20,0.92), rgba(7,11,20,0));
+  }
+  .photo-caption {
+    position: absolute;
+    left: 90px; right: 90px; bottom: 130px;
+    font-size: 44px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    opacity: 0;
+  }
+  /* CTA scene */
+  .cta-card {
+    text-align: center;
+  }
+  .cta-title {
+    font-size: 78px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    opacity: 0;
+  }
+  .cta-link {
+    font-size: 64px;
+    font-weight: 500;
+    color: #33c9ff;
+    margin-top: 46px;
+    opacity: 0;
+    letter-spacing: -0.01em;
+  }
+  .cta-wa {
+    font-size: 36px;
+    color: #c7ccd6;
+    margin-top: 26px;
+    opacity: 0;
+  }
+  .cta-brand {
+    position: absolute;
+    bottom: 90px;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #5b6473;
+    opacity: 0;
+  }
+  .vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, rgba(7,11,20,0) 55%, rgba(7,11,20,0.55) 100%);
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- Scene A: intro wordmark -->
+  <div class="scene" id="sceneA">
+    <div class="wordmark" id="wordmark">HNK</div>
+    <div class="eyebrow" id="eyebrowA" style="margin-top:18px;">IoT Solutions</div>
+    <div class="sub" id="subA">From the circuit board to the cloud.</div>
+  </div>
+
+  <!-- Scene B: services, 4 items sharing one scene container -->
+  <div class="scene" id="sceneB">
+    <div class="eyebrow" id="svcTag">01 &middot; Hardware</div>
+    <div class="headline" id="svcTitle" style="font-size:84px;">Embedded Systems<br/>&amp; Firmware</div>
+    <div class="rule" id="svcRule"></div>
+  </div>
+
+  <!-- Scene C: real photos -->
+  <div class="scene" id="sceneC" style="padding:0;">
+    <div class="photo-wrap">
+      <img class="photo" id="photo1" src="images/hero.webp" />
+      <img class="photo" id="photo2" src="images/gallery-02.webp" />
+      <div class="photo-shade"></div>
+    </div>
+    <div class="photo-caption" id="photoCaption">Real hardware. Real deployments.</div>
+  </div>
+
+  <!-- Scene D: reach -->
+  <div class="scene" id="sceneD">
+    <div class="headline" id="reachLine1" style="font-size:80px;">Cape Town based.</div>
+    <div class="headline" id="reachLine2" style="font-size:80px; margin-top:10px;">Clients worldwide.</div>
+  </div>
+
+  <!-- Scene E: CTA -->
+  <div class="scene" id="sceneE">
+    <div class="cta-card">
+      <div class="cta-title" id="ctaTitle">Let&rsquo;s build<br/>something.</div>
+      <div class="cta-link" id="ctaLink">hnkiot.com</div>
+      <div class="cta-wa" id="ctaWa">WhatsApp&nbsp;+27&nbsp;61&nbsp;471&nbsp;9400</div>
+    </div>
+    <div class="cta-brand" id="ctaBrand">HNK IoT Solutions</div>
+  </div>
+
+  <div class="vignette"></div>
+</div>
+
+<script type="module">
+import { animate } from "https://cdn.jsdelivr.net/npm/motion@13/+esm";
+
+const $ = (id) => document.getElementById(id);
+const easeOut = [0.16, 1, 0.3, 1];
+
+function fadeIn(el, opts = {}) {
+  return animate(el, { opacity: [0, 1], y: opts.y != null ? [opts.y, 0] : undefined },
+    { duration: opts.duration ?? 0.7, easing: easeOut }).finished;
+}
+function fadeOut(el, opts = {}) {
+  return animate(el, { opacity: [1, 0] }, { duration: opts.duration ?? 0.5, easing: 'ease-in' }).finished;
+}
+const wait = (s) => new Promise((r) => setTimeout(r, s * 1000));
+
+const services = [
+  { tag: '01 · Hardware', title: 'Embedded Systems<br/>&amp; Firmware' },
+  { tag: '02 · Connectivity', title: 'IoT &amp;<br/>Telemetry' },
+  { tag: '03 · Software', title: 'Software &amp;<br/>Dashboards' },
+  { tag: '04 · Electronics', title: 'Electronics &amp;<br/>Prototyping' },
+];
+
+async function run() {
+  // Scene A: intro
+  $('sceneA').style.opacity = 1;
+  await fadeIn($('wordmark'), { y: 20, duration: 0.9 });
+  await Promise.all([fadeIn($('eyebrowA'), { y: 10 }), wait(0.05)]);
+  await fadeIn($('subA'), { y: 10 });
+  await wait(0.9);
+  await fadeOut($('sceneA'), { duration: 0.6 });
+  $('sceneA').style.opacity = 0;
+
+  // Scene B: services loop
+  $('sceneB').style.opacity = 1;
+  const svcTag = $('svcTag');
+  const svcTitle = $('svcTitle');
+  const svcRule = $('svcRule');
+  for (let i = 0; i < services.length; i++) {
+    svcTag.innerHTML = services[i].tag;
+    svcTitle.innerHTML = services[i].title;
+    svcRule.style.width = '0px';
+    svcTag.style.opacity = 0;
+    svcTitle.style.opacity = 0;
+    await Promise.all([
+      fadeIn(svcTag, { y: 16 }),
+      fadeIn(svcTitle, { y: 24, duration: 0.8 }),
+    ]);
+    animate(svcRule, { width: ['0px', '160px'] }, { duration: 0.6, easing: easeOut });
+    await wait(1.0);
+    await Promise.all([fadeOut(svcTag, { duration: 0.35 }), fadeOut(svcTitle, { duration: 0.35 })]);
+  }
+  await fadeOut($('sceneB'), { duration: 0.5 });
+  $('sceneB').style.opacity = 0;
+
+  // Scene C: real photos
+  $('sceneC').style.opacity = 1;
+  animate($('photo1'), { opacity: [0, 1], scale: [1, 1.08] }, { duration: 2.6, easing: 'linear' });
+  await wait(0.4);
+  await fadeIn($('photoCaption'), { y: 14 });
+  await wait(2.0);
+  await Promise.all([
+    animate($('photo1'), { opacity: [1, 0] }, { duration: 0.8 }).finished,
+    animate($('photo2'), { opacity: [0, 1], scale: [1, 1.08] }, { duration: 2.8, easing: 'linear' }).finished,
+  ]);
+  await wait(1.6);
+  await fadeOut($('sceneC'), { duration: 0.6 });
+  $('sceneC').style.opacity = 0;
+
+  // Scene D: reach
+  $('sceneD').style.opacity = 1;
+  await fadeIn($('reachLine1'), { y: 16 });
+  await fadeIn($('reachLine2'), { y: 16 });
+  await wait(0.9);
+  await fadeOut($('sceneD'), { duration: 0.5 });
+  $('sceneD').style.opacity = 0;
+
+  // Scene E: CTA
+  $('sceneE').style.opacity = 1;
+  await fadeIn($('ctaTitle'), { y: 20, duration: 0.8 });
+  await fadeIn($('ctaLink'), { y: 14 });
+  await fadeIn($('ctaWa'), { y: 10 });
+  await fadeIn($('ctaBrand'));
+  await wait(2.4);
+
+  window.__promoDone = true;
+}
+
+run();
+</script>
+</body>
+</html>
