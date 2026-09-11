@@ -172,7 +172,7 @@ export default function Works({ scrollRef: _scrollRef, onSelectService }) {
               service={service}
               index={i}
               setCanvasRef={setCanvasRef}
-              onClick={() => onSelectService(service.title)}
+              onClick={() => onSelectService(service.id)}
             />
           ))}
         </div>

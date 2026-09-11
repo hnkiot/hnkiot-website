@@ -9,6 +9,7 @@ const Works = lazy(() => import('./sections/Works'))
 const Capabilities = lazy(() => import('./sections/Capabilities'))
 const Highlight = lazy(() => import('./sections/Highlight'))
 const Contact = lazy(() => import('./sections/Contact')) // three.js shader, heaviest chunk
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
 
 function LightFallback() {
   return <div style={{ minHeight: '300px', backgroundColor: '#f4f4f5' }} />
@@ -16,10 +17,14 @@ function LightFallback() {
 function DarkFallback() {
   return <div style={{ minHeight: '400px', backgroundColor: '#070b14' }} />
 }
+function WhiteFallback() {
+  return <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }} />
+}
 
 export default function App() {
   const scrollRef = useRef({ y: 0, speed: 0 })
   const [presetService, setPresetService] = useState(null)
+  const [currentServiceId, setCurrentServiceId] = useState(null)
 
   useEffect(() => {
     let rafId
@@ -35,9 +40,26 @@ export default function App() {
     return () => cancelAnimationFrame(rafId)
   }, [])
 
-  const handleSelectService = useCallback((title) => {
+  // Card click on the services grid: open the full detail view (no page reload, no route change).
+  const handleSelectService = useCallback((id) => {
+    setCurrentServiceId(id)
+  }, [])
+
+  const handleBack = useCallback(() => {
+    setCurrentServiceId(null)
+    setTimeout(() => {
+      document.querySelector('#works')?.scrollIntoView({ behavior: 'auto' })
+    }, 0)
+  }, [])
+
+  // "Enquire About This Service" from the detail view: close it, preset the
+  // contact form's service dropdown, and scroll to the enquiry form.
+  const handleEnquire = useCallback((title) => {
+    setCurrentServiceId(null)
     setPresetService(title)
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+    setTimeout(() => {
+      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+    }, 0)
   }, [])
 
   const consumePreset = useCallback(() => setPresetService(null), [])
@@ -46,22 +68,28 @@ export default function App() {
     <>
       <Preloader />
       <Header scrollRef={scrollRef} />
-      <main>
-        <Hero />
-        <Philosophy />
-        <Suspense fallback={<LightFallback />}>
-          <Works scrollRef={scrollRef} onSelectService={handleSelectService} />
+      {currentServiceId ? (
+        <Suspense fallback={<WhiteFallback />}>
+          <ServiceDetail serviceId={currentServiceId} onBack={handleBack} onEnquire={handleEnquire} />
         </Suspense>
-        <Suspense fallback={<DarkFallback />}>
-          <Capabilities />
-        </Suspense>
-        <Suspense fallback={<LightFallback />}>
-          <Highlight />
-        </Suspense>
-        <Suspense fallback={<DarkFallback />}>
-          <Contact presetService={presetService} onConsumePreset={consumePreset} />
-        </Suspense>
-      </main>
+      ) : (
+        <main>
+          <Hero />
+          <Philosophy />
+          <Suspense fallback={<LightFallback />}>
+            <Works scrollRef={scrollRef} onSelectService={handleSelectService} />
+          </Suspense>
+          <Suspense fallback={<DarkFallback />}>
+            <Capabilities />
+          </Suspense>
+          <Suspense fallback={<LightFallback />}>
+            <Highlight />
+          </Suspense>
+          <Suspense fallback={<DarkFallback />}>
+            <Contact presetService={presetService} onConsumePreset={consumePreset} />
+          </Suspense>
+        </main>
+      )}
       <Footer />
     </>
   )

@@ -126,16 +126,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0.85 }}>
+      <div style={{ width: '100%', overflow: 'hidden', padding: 'clamp(12px, 2vw, 24px) 0' }}>
         <span
           style={{
             display: 'block',
-            fontSize: 'clamp(52px, 15vw, 260px)',
+            fontSize: 'clamp(48px, 14vw, 240px)',
             fontWeight: 400,
+            lineHeight: 1.15,
             letterSpacing: '-0.04em',
             color: '#0b1220',
             whiteSpace: 'nowrap',
-            transform: 'translateY(15%)',
             userSelect: 'none',
           }}
         >

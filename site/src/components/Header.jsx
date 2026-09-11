@@ -9,18 +9,39 @@ export default function Header({ scrollRef }) {
   const [overHeroRaw, setOverHeroRaw] = useState(true)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const rafRef = useRef(0)
+  const lastYRef = useRef(0)
 
   useEffect(() => {
     const check = () => {
       const y = scrollRef.current.y
       setIsCompact(y > 100)
       setOverHeroRaw(y < window.innerHeight * 0.85)
+
+      // Scroll up -> reveal the header. Scroll down -> hide it. A small
+      // dead zone near the top keeps it always visible on page load, and
+      // a threshold on the delta avoids flicker on tiny scroll jitter.
+      const delta = y - lastYRef.current
+      if (y < 80) {
+        setHidden(false)
+      } else if (delta > 6) {
+        setHidden(true)
+      } else if (delta < -6) {
+        setHidden(false)
+      }
+      lastYRef.current = y
+
       rafRef.current = requestAnimationFrame(check)
     }
     rafRef.current = requestAnimationFrame(check)
     return () => cancelAnimationFrame(rafRef.current)
   }, [scrollRef])
+
+  useEffect(() => {
+    if (hidden && mobileMenuOpen) setMobileMenuOpen(false)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hidden])
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 820)
@@ -60,8 +81,9 @@ export default function Header({ scrollRef }) {
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0 clamp(16px, 4vw, 56px)',
+          transform: hidden ? 'translateY(-100%)' : 'translateY(0)',
           transition:
-            'height 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, border-color 0.4s ease',
+            'height 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease, border-color 0.4s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
           boxSizing: 'border-box',
           backdropFilter: overHero ? 'none' : 'blur(10px)',
         }}
