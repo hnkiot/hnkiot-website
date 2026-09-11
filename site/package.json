@@ -1,9 +1,9 @@
 {
   "name": "hnkiot-website",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
-  "description": "HNK IoT Solutions — company website (Cloudflare Pages)",
+  "description": "HNK IoT Solutions: single-page company website on Cloudflare Pages",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,8 +11,10 @@
     "deploy": "npm run build && wrangler pages deploy dist --project-name=hnkiot --branch=main"
   },
   "dependencies": {
+    "gsap": "^3.12.7",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "three": "^0.170.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "4.3.4",

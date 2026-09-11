@@ -29,6 +29,8 @@ jobs:
       - name: Build
         working-directory: site
         run: npm run build
+        env:
+          VITE_FORMSPREE_ENDPOINT: ${{ secrets.VITE_FORMSPREE_ENDPOINT }}
 
       - name: Deploy
         working-directory: site
