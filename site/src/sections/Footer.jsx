@@ -158,7 +158,7 @@ export default function Footer() {
           color: '#999999',
         }}
       >
-        <span>&copy; {new Date().getFullYear()} HNK IoT Solutions (Pty) Ltd. Registered private company, South Africa.</span>
+        <span>&copy; {new Date().getFullYear()} HNK IoT Solutions (Pty) Ltd.</span>
         <span>Embedded Systems | IoT | Software | Training</span>
       </div>
     </footer>
