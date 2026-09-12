@@ -16,12 +16,25 @@ Embedded systems, IoT and software, from the circuit board to the cloud.
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
 [![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-hosted-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
+[![Last commit](https://img.shields.io/github/last-commit/hnkiot/hnkiot-website?style=flat-square&color=0b1220)](https://github.com/hnkiot/hnkiot-website/commits/main)
 
 **[hnkiot.com →](https://hnkiot.com)**
 
 </div>
 
 ---
+
+## Contents
+
+- [About](#about)
+- [Features](#features)
+- [Tech stack](#tech-stack)
+- [Local development](#local-development)
+- [Deploy](#deploy)
+- [Marketing video](#marketing-video)
+- [Project layout](#project-layout)
+- [Security](#security)
+- [License](#license)
 
 ## About
 
@@ -31,6 +44,11 @@ in South Africa. HNK IoT Solutions designs and builds embedded systems, IoT and 
 solutions, software and dashboards, and provides technical support, networking, energy
 monitoring and engineering training, working with clients across South Africa and
 internationally.
+
+> [!NOTE]
+> This is a company website repository, not an open-source library. It is public for
+> transparency and portfolio purposes. Issues and pull requests from outside the team are not
+> expected to be actioned, but the code is free to read and reuse under the license below.
 
 ## Features
 
@@ -97,6 +115,9 @@ Source scene: [`site/marketing/promo/index.html`](site/marketing/promo/index.htm
 
 ## Project layout
 
+<details>
+<summary>Expand full file tree</summary>
+
 ```
 site/                       React + Vite source for hnkiot.com
 site/src/sections/           page sections (Hero, Works, About, Contact, etc.)
@@ -119,6 +140,17 @@ PROJECT-STATUS.md             build log, phase by phase
 marketing/                    social post copy and a NotebookLM video prompt
 domain-email.txt              original project brief
 ```
+
+</details>
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for how to report a vulnerability, and for a record of the one
+credential exposure this repository has had and how it was resolved.
+
+> [!IMPORTANT]
+> Never commit API tokens, client secrets, or `.env` files. See the root `.gitignore` for the
+> current exclusion list.
 
 ## License
 
