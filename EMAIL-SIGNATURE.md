@@ -6,11 +6,21 @@ user-supplied `signature.txt` design. That file was a Tailwind-CDN HTML artboard
 classes, Material-Symbols icon font, and the temporary googleusercontent photo are all stripped by mail
 clients, so it could not be pasted in as-is.
 
-**Status:** pushed to Zoho via API on 2026-09-06 as signature id `7723912000000013001` ("HNK IoT Solutions"),
-position 1, assigned to `henock@` plus all 5 aliases. The old placeholder signature (`7723912000000012001`)
-was blanked. Confirm it is the default in Zoho webmail: Settings, Signatures.
+**Status:** originally pushed to Zoho via API on 2026-09-06 as signature id `7723912000000013001`
+("HNK IoT Solutions"), position 1, assigned to `henock@` plus all 5 aliases. The old placeholder
+signature (`7723912000000012001`) was blanked.
+
+**2026-09-12 update:** the Zoho Self Client credentials used for that API automation were found
+committed to this repo's git history (`img/self_client.json`) and had to be treated as compromised.
+The old Self Client was deleted in the Zoho API Console, which also invalidated its refresh token, so
+the API push path is currently disabled. Until a new Self Client is set up (with its credentials kept
+out of git entirely), update the signature manually: Zoho webmail, Settings, Signatures, edit the
+signature, switch to source view (`<>`), paste the contents of `HNK-signature.html`, Save, confirm it
+is still the default.
 
 Phone number updated 2026-09-06 to the dedicated WhatsApp number `+27 61 471 9400`, linked via `wa.me`.
+
+Social links row added 2026-09-12: LinkedIn, Instagram, X, Facebook, YouTube, TikTok, Pinterest.
 
 To swap in a different headshot later: host a square photo at `https://hnkiot.com/sig/profile.jpg`
 (add to `site/public/sig/`, redeploy). The image is already referenced from `HNK-signature.html`.
@@ -31,6 +41,14 @@ e: henock@hnkiot.com
 w: https://hnkiot.com
 WhatsApp: +27 61 471 9400
 Cape Town, South Africa. Working with clients worldwide.
+
+LinkedIn: https://www.linkedin.com/in/hnk-iot-solutions/
+Instagram: https://www.instagram.com/hnkiotsolutions/
+X: https://x.com/HnkIotSolutions
+Facebook: https://www.facebook.com/HnkIoTSolutions
+YouTube: https://www.youtube.com/@HNKIoTSolutions
+TikTok: https://www.tiktok.com/@hnkiot
+Pinterest: https://www.pinterest.com/HNKIoTSolutions
 ```
 
 ## Plain text, shared / alias (`hello@`, `support@`, `projects@`, `training@`, `accounts@`)
@@ -43,6 +61,14 @@ e: hello@hnkiot.com
 w: https://hnkiot.com
 WhatsApp: +27 61 471 9400
 Cape Town, South Africa. Working with clients worldwide.
+
+LinkedIn: https://www.linkedin.com/in/hnk-iot-solutions/
+Instagram: https://www.instagram.com/hnkiotsolutions/
+X: https://x.com/HnkIotSolutions
+Facebook: https://www.facebook.com/HnkIoTSolutions
+YouTube: https://www.youtube.com/@HNKIoTSolutions
+TikTok: https://www.tiktok.com/@hnkiot
+Pinterest: https://www.pinterest.com/HNKIoTSolutions
 ```
 
 ---
@@ -97,6 +123,8 @@ Henock Mukonkole
 HNK IoT Solutions
 Embedded Systems | IoT | Software Development | Technical Support | Engineering Training
 https://hnkiot.com
+
+Find us: LinkedIn, Instagram, X, Facebook, YouTube, TikTok and Pinterest, all linked from hnkiot.com
 ```
 
 > Caution: an always-on auto-reply fires on every inbound mail, including replies during an active
