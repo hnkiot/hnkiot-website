@@ -7,6 +7,8 @@ const socials = [
   ['X', 'https://x.com/HnkIotSolutions'],
   ['Facebook', 'https://www.facebook.com/HnkIoTSolutions'],
   ['YouTube', 'https://www.youtube.com/@HNKIoTSolutions'],
+  ['TikTok', 'https://www.tiktok.com/@hnkiot'],
+  ['Pinterest', 'https://www.pinterest.com/HNKIoTSolutions'],
 ]
 
 export default function Footer() {
