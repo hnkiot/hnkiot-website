@@ -12,11 +12,30 @@ signature (`7723912000000012001`) was blanked.
 
 **2026-09-12 update:** the Zoho Self Client credentials used for that API automation were found
 committed to this repo's git history (`img/self_client.json`) and had to be treated as compromised.
-The old Self Client was deleted in the Zoho API Console, which also invalidated its refresh token, so
-the API push path is currently disabled. Until a new Self Client is set up (with its credentials kept
-out of git entirely), update the signature manually: Zoho webmail, Settings, Signatures, edit the
-signature, switch to source view (`<>`), paste the contents of `HNK-signature.html`, Save, confirm it
-is still the default.
+The old Self Client was deleted in the Zoho API Console, which also invalidated its refresh token. A
+new Self Client was created, its credentials kept only in a local, gitignored scratchpad, and API
+access was restored the same day: the signature was re-pushed with the social links row and a swapped
+profile image (the HNK icon mark instead of a headshot), and the old empty placeholder signature
+(`7723912000000012001`) was deleted from the account.
+
+The working endpoint pattern (undocumented publicly, found via testing):
+`GET/PUT https://mail.zoho.com/api/organization/{orgId}/accounts/{zuid}/signature`, `org id
+938105809`, `zuid 938105669`. A PUT to update requires the full object back: `id`, `name`, `content`,
+`position`, plus `assignUsers` and `unassignUsers` (even if the latter is an empty array), or the API
+returns a 500 with a `moreInfo` field naming the next missing key. Delete works on the base URL (no id
+in the path) with `{"id": "..."}` in the body; an id in the URL path 404s with `URL_RULE_NOT_CONFIGURED`
+for every signature verb tried (GET, PUT, DELETE all only work on the base URL).
+
+**Note:** the git history of this repo still contains the old, now-revoked, `img/self_client.json`.
+It needs to be stripped from history (not just deleted in a new commit) and force-pushed, pending
+explicit approval since that rewrites shared history.
+
+A standalone preview of the live signature is at `https://hnkiot.com/signature-preview`
+(`site/public/signature-preview.html`), for checking it without opening a mail client.
+
+To swap in a different signature manually instead of via API: Zoho webmail, Settings, Signatures, edit
+the signature, switch to source view (`<>`), paste the contents of `HNK-signature.html`, Save, confirm
+it is still the default.
 
 Phone number updated 2026-09-06 to the dedicated WhatsApp number `+27 61 471 9400`, linked via `wa.me`.
 
