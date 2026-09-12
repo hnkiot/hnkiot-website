@@ -1,0 +1,26 @@
+name: Bug report
+description: Report a problem with hnkiot.com or this repository
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you see, and what did you expect instead?
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Page URL
+      description: Which page on hnkiot.com, if applicable
+      placeholder: https://hnkiot.com/
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser
+      placeholder: e.g. iPhone 14, Safari, or Windows 11, Chrome
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
